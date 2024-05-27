@@ -22,8 +22,8 @@ jobs:
         
       - name: Run the bot
         env:
-          API_KEY: ${{ tIPkD7D7I8C5vxPeDjh9nfZX1 }}
-          API_SECRET_KEY: ${{ lI62wH8Hgt8kifGBUXEa7cUXHupw2pTsMCWTZHY591cJXzEqOh }}
-          ACCESS_TOKEN: ${{ 1683569845588066305-larhHQrLHUbrU4CE5wT2GyUAnnmFaT }}
-          ACCESS_TOKEN_SECRET: ${{ mIqqLvydYryvh0whol0uCtkZ35fXR9OE4oeVIUjZgWcsM }}
+          API_KEY: ${{ secrets.API_KEY }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         run: python tweet_bot.py
