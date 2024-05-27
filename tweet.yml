@@ -1,0 +1,29 @@
+name: Tweet Bot
+
+on:
+  schedule:
+    - cron: '22 * * *'
+
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: pip install tweepy
+        
+      - name: Run the bot
+        env:
+          API_KEY: ${{ tIPkD7D7I8C5vxPeDjh9nfZX1 }}
+          API_SECRET_KEY: ${{ lI62wH8Hgt8kifGBUXEa7cUXHupw2pTsMCWTZHY591cJXzEqOh }}
+          ACCESS_TOKEN: ${{ 1683569845588066305-larhHQrLHUbrU4CE5wT2GyUAnnmFaT }}
+          ACCESS_TOKEN_SECRET: ${{ mIqqLvydYryvh0whol0uCtkZ35fXR9OE4oeVIUjZgWcsM }}
+        run: python tweet_bot.py
