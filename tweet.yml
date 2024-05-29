@@ -10,12 +10,21 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v3  # Asegúrate de que es v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3  # Añadir esta línea para asegurar Node.js 20
+        with:
+          node-version: '20'
+
+      - name: Check Node.js version  # Este paso verifica la versión de Node.js
+        run: node -v
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v4  # Asegúrate de que es v4
         with:
           python-version: '3.x'
+
           
       - name: Install dependencies
         run: python -m pip install --upgrade pip
